@@ -14,10 +14,6 @@ working-storage section.
     03 t-month      pic x(2).
     03 t-day        pic x(2).
 
-77 today-year       pic x(4).
-77 today-month      pic x(2).
-77 today-day        pic x(2).
-
 77 non-integer      pic S999v99999 value 3.14159.
 77 pi-edit          pic x(50).
 
