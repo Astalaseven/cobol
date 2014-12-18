@@ -22,7 +22,16 @@ working-storage section.
 77 ptr                      pic 9 value 4.
 77 countsplit               pic 9.
 
+77 today-date               pic 9(8).
+77 today-year               pic 9(4).
+77 today-month              pic 99.
+77 today-day                pic 99.
+
 procedure division.
+
+*>******************************************
+*> unstring using different delimiters     *
+*>******************************************
 
 unstring
     random-string delimited by all "ABC" or "GHI"
@@ -31,7 +40,7 @@ unstring
          ch3 delimiter in delich3 count in countch3
     with pointer ptr
     tallying in countsplit
-    on overflow display "Pointer too low/high :("
+    on overflow display "Pointer too low/high or not enough variables :("
 end-unstring
 
 
@@ -45,5 +54,22 @@ display "Split number : " countsplit
 *> Content 2 : DEF        (delimiter : GHI, size : 3)                                                
 *> Content 3 : JKL        (delimiter :    , size : 3)
 *> Split number : 3
+
+*>******************************************
+*> unstring using recepting variables size *
+*>******************************************
+
+move function current-date(1:8) to today-date
+
+unstring
+    today-date
+    into today-year
+         today-month
+         today-day
+end-unstring
+
+display "Today: " today-day "/" today-month "/" today-year
+
+*> Today: 18/12/2014
 
 goback.
