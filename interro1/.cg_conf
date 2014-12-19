@@ -1,0 +1,1 @@
+{"id":"cobol","ext":"cobc","version":"OpenCOBOL v1.1.0","compile":"cobc -free entete.cobc && cobc -x -free main.cobc -o main","execute":"main","preview":"","file":"/home/cg/src/samples/main.cobc","url":"compile_cobol_online.php","mode":"cobol"}
