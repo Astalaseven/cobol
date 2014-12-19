@@ -29,7 +29,7 @@ linkage section.
 77 ptr                      pic 99.
 77 surname                  pic x(25).
 77 name                     pic x(25).
-77 header                   pic x(132).
+77 header                   pic x(80).
     
 procedure division using name surname ptr header.
 
