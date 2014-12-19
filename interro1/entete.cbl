@@ -11,9 +11,13 @@ working-storage section.
     03 prenom               pic x(25).
     
 01 today-date.
-    03 t-year               pic x(4).
-    03 t-month              pic x(2).
-    03 t-day                pic x(2).
+    03 today-year           pic x(4).
+    03 today-month          pic x(2).
+    03 today-day            pic x(2).
+    
+77 t-year                   pic x(4).
+77 t-month                  pic x(2).
+77 t-day                    pic x(2).
 
 77 structure                pic X.
     88 accepted             value "o".
@@ -25,9 +29,9 @@ linkage section.
 77 ptr                      pic 99.
 77 surname                  pic x(25).
 77 name                     pic x(25).
-77 entete                   pic x(132).
+77 header                   pic x(132).
     
-procedure division using name surname ptr entete.
+procedure division using name surname ptr header.
 
 *>*****************************************************
 *> string with date from `function current-date(1:8)` *
@@ -35,11 +39,15 @@ procedure division using name surname ptr entete.
 *>*****************************************************
 
 *> by default structures are not authorized, let's change this
-set accepted to true
+*> set accepted to true
 
 if accepted then
 
     accept today-date from date YYYYMMDD
+    
+    move today-year     to t-year
+    move today-month    to t-month
+    move today-day      to t-day
 
 else
 
@@ -59,7 +67,7 @@ string
     t-month
     "/"
     t-year      delimited by size
-    into entete with pointer ptr
+    into header with pointer ptr
     on overflow display "Error in string operation"
 end-string
 
