@@ -40,8 +40,8 @@ working-storage section.
 
 77 conversion-str       pic x(80).
 
-77 f-eof             pic x VALUE "1".
-    88 eof              value "0".
+77 f-eof                pic x     value "1".
+    88 eof                        value "0".
 
 *>****************************************
 
