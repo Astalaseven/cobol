@@ -23,7 +23,7 @@
        77 entete           pic x(132).
 
        77 structure        pic X           value "n".
-           88 accepted                    value "o".
+           88 accepted                     value "o".
 
        procedure division.
        
