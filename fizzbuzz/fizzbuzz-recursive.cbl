@@ -12,6 +12,10 @@
        01 bz           pic 999     value 1.
        01 nb-recur     pic 999.
 
+       01 fizzbuzz.
+           03 fizz     pic x(4)    value "Fizz".
+           03 buzz     pic x(4)    value "Buzz".
+
        linkage section.
 
        01 nb           pic 999.
@@ -29,13 +33,13 @@
            if fz = 3 then
                 if bz = 5 then
 
-                    display "FizzBuzz"
+                    display fizzbuzz
                     move 0 to bz
                     
                 else
-       
-                    display "Fizz"
-       
+
+                    display fizz
+
                 end-if
                 
                 move 0 to fz
@@ -43,7 +47,7 @@
            else
                if bz = 5 then
 
-                   display "Buzz"
+                   display buzz
                    move 0 to bz
 
                else
