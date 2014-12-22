@@ -1,10 +1,9 @@
        identification division.
        program-id. interro1.
-       
       *>****************************************
-       
+
        environment division.
-       
+
        input-output section.
        
        file-control.
@@ -41,10 +40,10 @@
        77 conversion-str       pic x(80).
 
        77 f-eof                pic x       value "0".
-       88 eof                              value "1".
+           88 eof                          value "1".
 
       *>****************************************
-       
+
        procedure division.
        
        perform open-file.
