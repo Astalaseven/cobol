@@ -7,9 +7,9 @@
 
        working-storage section.
 
-       01 ct           pic 999.
-       01 fz           pic 999     value 1.
-       01 bz           pic 999     value 1.
+       01 ct           pic 999999.
+       01 fz           pic 9       value 1.
+       01 bz           pic 9       value 1.
 
        01 fizzbuzz.
            03 fizz     pic x(4)    value "Fizz".
@@ -17,7 +17,7 @@
 
        linkage section.
 
-       01 nb           pic 999.
+       01 nb           pic 999999.
 
       *>-----------------------------------
        procedure division using nb.
