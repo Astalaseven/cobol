@@ -7,7 +7,7 @@
 
        working-storage section.
 
-       01 ct           pic 999999.
+       01 ct           pic 999.
        01 fz           pic 9       value 1.
        01 bz           pic 9       value 1.
 
@@ -17,7 +17,7 @@
 
        linkage section.
 
-       01 nb           pic 999999.
+       01 nb           pic 999.
 
       *>-----------------------------------
        procedure division using nb.
@@ -53,6 +53,8 @@
                end-if
 
                add 1 to fz bz
+                   on size error display "error while adding 1 to fz bz"
+               end-add
 
            end-perform
 

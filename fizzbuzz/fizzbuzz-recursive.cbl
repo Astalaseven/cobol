@@ -8,8 +8,8 @@
        working-storage section.
 
        01 ct           pic 999.
-       01 fz           pic 999     value 1.
-       01 bz           pic 999     value 1.
+       01 fz           pic 9       value 1.
+       01 bz           pic 9       value 1.
        01 nb-recur     pic 999.
 
        01 fizzbuzz.
@@ -28,27 +28,30 @@
            end-if
        
            compute nb-recur = nb - 1
+               on size error display "error while subtracting nb"
+           end-compute
+
            call "fizzbuzz-recursive" using by content nb-recur
 
            if fz = 3 then
                 if bz = 5 then
 
                     display fizzbuzz
-                    move 0 to bz
-                    
+                    compute bz = 0
+
                 else
 
                     display fizz
 
                 end-if
-                
-                move 0 to fz
+
+                compute fz = 0
 
            else
                if bz = 5 then
 
                    display buzz
-                   move 0 to bz
+                   compute bz = 0
 
                else
 
@@ -59,5 +62,7 @@
            end-if
 
            add 1 to fz bz
+               on size error display "error while adding 1 to fz bz"
+           end-add
 
            goback.
