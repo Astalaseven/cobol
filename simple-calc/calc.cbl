@@ -15,9 +15,9 @@
                88 ws-modulo                        value "%".
            03 ws-sndnb             pic s9(9)v9(4)  usage packed-decimal.
 
-       77 ws-fstnb-edt             pic -z(10)9.z(4).
-       77 ws-sndnb-edt             pic -z(10)9.z(4).
-       77 ws-total                 pic -z(18)9.z(4).
+       77 ws-fstnb-edt             pic -z(10)9.9(4).
+       77 ws-sndnb-edt             pic -z(10)9.9(4).
+       77 ws-total                 pic -z(18)9.9(4).
 
        77 ws-input                 pic x(80).
        77 ws-output                pic x(80).
